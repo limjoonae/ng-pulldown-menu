@@ -1,0 +1,8 @@
+<li class="nav-item dropdown">
+  <a class="nav-link dropdown-toggle" href="#" id="supportedContentDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{headMenu}}</a>
+  <div class="dropdown-menu" aria-labelledby="supportedContentDropdown">
+    <div *ngFor="let page of pageList">
+      <a class="dropdown-item" routerLinkActive="active" routerLink="/{{page.routerLink}}">{{page.menuName}}</a>
+    </div>
+  </div>
+</li>

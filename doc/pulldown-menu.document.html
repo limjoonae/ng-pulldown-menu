@@ -1,0 +1,102 @@
+<!--<gos-pulldown-menu headMenu="List" [pageList]="pageList"></gos-pulldown-menu>-->
+
+<ul class="nav nav-tabs" role="tablist">
+	<li class="nav-item"><a class="nav-link active" href="#Overview"
+		role="tab" data-toggle="tab">Overview</a></li>
+	<li class="nav-item"><a class="nav-link" href="#Document" role="tab"
+		data-toggle="tab">Document</a></li>
+	<li class="nav-item"><a class="nav-link" href="#Example" role="tab"
+		data-toggle="tab">Example</a></li>
+</ul>
+
+<!-- Tab panes -->
+<div class="tab-content">
+	<div role="tabpanel" class="tab-pane fade in active" id="Overview">
+		<div class="jumbotron">
+			<h2>Component {{componentTag}}</h2><br>
+			<div class="row">
+				<div class="col-md-6">
+					<strong>Description</strong>
+					<p>{{componentDescription}}</p>
+				</div>
+				<div class="col-md-6">
+					<p><strong>Version: {{version}}</strong>
+					</p>
+					<p><strong>Release Date: {{releaseDate}}</strong>
+					</p>
+					<p><strong></strong></p>
+				</div>
+			</div>
+		</div>
+	</div>
+  	<div role="tabpanel" class="tab-pane fade" id="Document">
+		<div class="jumbotron">
+			<h2>Syntax</h2>
+			<!--<small>[  ] = optional attribute\n</small>-->
+			<code>{{prefixSyntax}}<em>{{attrSyntax}}</em>{{suffixSyntax}}</code>
+		</div>
+		<div class="jumbotron">
+			<h2>Attributes</h2>
+			<small>* = require</small>
+			<table class="table">
+				<thead>
+					<tr>
+						<th></th>
+						<th>Attribute</th>
+						<th>Type</th>
+						<th>Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr *ngFor="let attribute of attributeList">
+						<th scope="row">{{attribute.require}}</th>
+						<td>{{attribute.name}}</td>
+						<td><em>{{attribute.type}}</em></td>
+						<td>{{attribute.description}}</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="jumbotron">
+			<h2>Getting Started</h2>
+			<p><li>systemjs.config.js</li></p>
+			<pre><code *ngFor="let line of systemjsLine">{{line}}<br></code></pre><br>
+			<p><li>app.module.ts</li></p>
+			<pre><code *ngFor="let line of appModuleLine">{{line}}<br></code></pre><br>
+			<p><li>app.component.ts</li></p>
+			<pre><code *ngFor="let line of appComponentLine">{{line}}<br></code></pre><br>
+			<p><li>style.css</li></p>
+			<pre><code *ngFor="let line of styleLine">{{line}}<br></code></pre><br>
+		</div>
+	</div>
+	<div role="tabpanel" class="tab-pane fade" id="Example">
+		<!--<div class="container-fluid">-->
+		<div class="jumbotron">
+			<div class="row row-in-tab">
+				<div class="col-md-2">
+          <ul class="nav navbar-nav">
+					  <gos-pulldown-menu headMenu="Pulldown Menu" [pageList]="pageList"></gos-pulldown-menu>
+          </ul>
+				</div>
+				<div class="col-md-10">
+					<div role="tab" id="ex_1">
+						<h5 class="mb-0">
+							<a class="collapsed" data-toggle="collapse" href="#collapse_ex_1" aria-expanded="false" aria-controls="collapse_ex_1">
+							Code Example#1
+							</a>
+						</h5>
+					</div>
+					<div id="collapse_ex_1" class="collapse" role="tabpanel" aria-labelledby="ex_1">
+						<div class="jumbotron">
+							<div class="row"><code>&lt;ul class="nav navbar-nav"&gt;</code></div>
+							<div class="row">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<code>&lt;gos-pulldown-menu headMenu="Pulldown Menu" [pageList]="pageListArray"&gt;&lt;/gos-pulldown-menu&gt;</code></div>
+							<div class="row"><code>&lt;/ul&gt;</code></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
