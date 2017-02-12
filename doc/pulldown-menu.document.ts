@@ -77,11 +77,11 @@ const PAGELIST: Array<any> = [
 
 @Component({
   moduleId: module.id,
-  selector: 'app-pulldown-menu',
+  selector: 'pulldown-menu-document',
   templateUrl: './pulldown-menu.document.html',
   styleUrls: ['./pulldown-menu.document.css']
 })
-export class PulldownmenuDocument implements OnInit {
+export class PulldownMenuDocument implements OnInit {
 
   private componentTag: string = '<gos-pulldown-menu>';
   private componentDescription: string = `Pull down menu คือ เมนูที่แสดงรายการในลักษณะถูกดึงลง โดยการกดที่หัวเมนูหลัก  
@@ -96,7 +96,6 @@ export class PulldownmenuDocument implements OnInit {
   private systemjsLine = SYSTEMJSLINE;
   private appModuleLine = APPMODULELINE;
   private appComponentLine = APPCOMPONENTLINE;
-  private styleLine = STYLELINE;
 
   pageList = PAGELIST;
   constructor() { }

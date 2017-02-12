@@ -65,20 +65,19 @@
 			<pre><code *ngFor="let line of appModuleLine">{{line}}<br></code></pre><br>
 			<p><li>app.component.ts</li></p>
 			<pre><code *ngFor="let line of appComponentLine">{{line}}<br></code></pre><br>
-			<p><li>style.css</li></p>
-			<pre><code *ngFor="let line of styleLine">{{line}}<br></code></pre><br>
 		</div>
 	</div>
 	<div role="tabpanel" class="tab-pane fade" id="Example">
 		<!--<div class="container-fluid">-->
 		<div class="jumbotron">
 			<div class="row row-in-tab">
-				<div class="col-md-2">
-          <ul class="nav navbar-nav">
-					  <gos-pulldown-menu headMenu="Pulldown Menu" [pageList]="pageList"></gos-pulldown-menu>
-          </ul>
+				<div class="col-md-3">
+					<ul class="nav navbar-nav">
+						<gos-pulldown-menu headMenu="Menu 1" [pageList]="pageList"></gos-pulldown-menu>
+						<gos-pulldown-menu headMenu="Menu 2" [pageList]="pageList"></gos-pulldown-menu>
+					</ul>
 				</div>
-				<div class="col-md-10">
+				<div class="col-md-9">
 					<div role="tab" id="ex_1">
 						<h5 class="mb-0">
 							<a class="collapsed" data-toggle="collapse" href="#collapse_ex_1" aria-expanded="false" aria-controls="collapse_ex_1">
@@ -88,9 +87,12 @@
 					</div>
 					<div id="collapse_ex_1" class="collapse" role="tabpanel" aria-labelledby="ex_1">
 						<div class="jumbotron">
-							<div class="row"><code>&lt;ul class="nav navbar-nav"&gt;</code></div>
-							<div class="row">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<code>&lt;gos-pulldown-menu headMenu="Pulldown Menu" [pageList]="pageListArray"&gt;&lt;/gos-pulldown-menu&gt;</code></div>
-							<div class="row"><code>&lt;/ul&gt;</code></div>
+							<div class="row">
+								<code>&lt;ul class="nav navbar-nav"&gt;</code><br>
+								<code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;gos-pulldown-menu headMenu="Menu 1" [pageList]="pageListArray"&gt;&lt;/gos-pulldown-menu&gt;</code><br>
+								<code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;gos-pulldown-menu headMenu="Menu 2" [pageList]="pageListArray"&gt;&lt;/gos-pulldown-menu&gt;</code><br>
+								<code>&lt;/ul&gt;</code>
+							</div>
 						</div>
 					</div>
 				</div>

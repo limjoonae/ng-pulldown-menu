@@ -78,8 +78,8 @@ var PAGELIST = [
     { routerLink: 'radiobox', menuName: 'Radio Box' },
     { routerLink: 'sidebar', menuName: 'Side Bar' },
 ];
-var PulldownmenuDocument = (function () {
-    function PulldownmenuDocument() {
+var PulldownMenuDocument = (function () {
+    function PulldownMenuDocument() {
         this.componentTag = '<gos-pulldown-menu>';
         this.componentDescription = "Pull down menu \u0E04\u0E37\u0E2D \u0E40\u0E21\u0E19\u0E39\u0E17\u0E35\u0E48\u0E41\u0E2A\u0E14\u0E07\u0E23\u0E32\u0E22\u0E01\u0E32\u0E23\u0E43\u0E19\u0E25\u0E31\u0E01\u0E29\u0E13\u0E30\u0E16\u0E39\u0E01\u0E14\u0E36\u0E07\u0E25\u0E07 \u0E42\u0E14\u0E22\u0E01\u0E32\u0E23\u0E01\u0E14\u0E17\u0E35\u0E48\u0E2B\u0E31\u0E27\u0E40\u0E21\u0E19\u0E39\u0E2B\u0E25\u0E31\u0E01  \n      \u0E15\u0E31\u0E27\u0E40\u0E21\u0E19\u0E39\u0E08\u0E30 hilight \u0E2A\u0E35\u0E40\u0E21\u0E37\u0E48\u0E2D\u0E1C\u0E39\u0E49\u0E43\u0E0A\u0E49\u0E2D\u0E22\u0E39\u0E48\u0E43\u0E19\u0E2B\u0E19\u0E49\u0E32\u0E17\u0E35\u0E48\u0E15\u0E23\u0E07\u0E01\u0E31\u0E1A url \u0E02\u0E2D\u0E07\u0E40\u0E21\u0E19\u0E39\u0E19\u0E31\u0E49\u0E19\u0E46 \n      \u0E01\u0E32\u0E23\u0E43\u0E0A\u0E49\u0E07\u0E32\u0E19\u0E08\u0E30\u0E43\u0E0A\u0E49\u0E23\u0E48\u0E27\u0E21\u0E01\u0E31\u0E1A router link \u0E43\u0E19 Angular 2 \u0E40\u0E1E\u0E37\u0E48\u0E2D\u0E04\u0E27\u0E32\u0E21\u0E2A\u0E30\u0E14\u0E27\u0E01\u0E43\u0E19\u0E01\u0E32\u0E23 config path";
         this.version = '1.0';
@@ -91,21 +91,20 @@ var PulldownmenuDocument = (function () {
         this.systemjsLine = SYSTEMJSLINE;
         this.appModuleLine = APPMODULELINE;
         this.appComponentLine = APPCOMPONENTLINE;
-        this.styleLine = STYLELINE;
         this.pageList = PAGELIST;
     }
-    PulldownmenuDocument.prototype.ngOnInit = function () {
+    PulldownMenuDocument.prototype.ngOnInit = function () {
     };
-    PulldownmenuDocument = __decorate([
+    PulldownMenuDocument = __decorate([
         core_1.Component({
             moduleId: module.id,
-            selector: 'app-pulldown-menu',
+            selector: 'pulldown-menu-document',
             templateUrl: './pulldown-menu.document.html',
             styleUrls: ['./pulldown-menu.document.css']
         }), 
         __metadata('design:paramtypes', [])
-    ], PulldownmenuDocument);
-    return PulldownmenuDocument;
+    ], PulldownMenuDocument);
+    return PulldownMenuDocument;
 }());
-exports.PulldownmenuDocument = PulldownmenuDocument;
+exports.PulldownMenuDocument = PulldownMenuDocument;
 //# sourceMappingURL=pulldown-menu.document.js.map
