@@ -43,10 +43,10 @@ var APPMODULELINE = [
     "   ],",
     "",
     "   declarations: [",
-    "   ..........",
-    "   PulldownMenuComponent,",
-    "   ..........",
-    "],",
+    "       ..........",
+    "       PulldownMenuComponent,",
+    "       ..........",
+    "   ],",
 ];
 var APPCOMPONENTLINE = [
     "import { PageListModel } from 'gos-pulldown-menu';",

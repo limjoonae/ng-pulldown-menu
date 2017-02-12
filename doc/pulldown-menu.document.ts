@@ -36,10 +36,10 @@ const APPMODULELINE: Array<any> = [
     `   ],`,
     ``,
     `   declarations: [`,
-    `   ..........`,
-    `   PulldownMenuComponent,`,
-    `   ..........`,
-    `],`,
+    `       ..........`,
+    `       PulldownMenuComponent,`,
+    `       ..........`,
+    `   ],`,
 ];
 
 const APPCOMPONENTLINE: Array<any> = [
