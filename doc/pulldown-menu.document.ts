@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
 const ATTRIBUTELIST: Array<any> = [
-    { require: '*', name: 'headMenu', type: 'text', description: `ใช้ระบุข้อความที่หัวเมนู`},
-    { require: '*', name: 'pageList', type: 'array', description: `ใช้ในการรับค่าตัวแปร array ซึ่งประกอบด้วย key คือ routerLink=url path, menuName=ชื่อ Menu`},
+    { require: '*', name: 'headLabel', type: 'text', description: `ใช้ระบุข้อความที่หัวเมนู`},
+    { require: '*', name: 'pageList', type: 'array', description: `ใช้ในการรับค่าตัวแปร array ซึ่งประกอบด้วย key คือ menuName=ชื่อ Menu, routerLink=ชื่อ path, outerHref=url website ภายนอก, separated=ระบุว่าให้มีเส้นขั้นเมนูหรือไม่
+        ซึ่งในส่วนของ routerLink กับ outerHref ให้ระบุเพียงอย่างใดอย่างหนึ่ง `},
 ];
 
 const SYSTEMJSLINE: Array<any> = [
@@ -32,7 +33,7 @@ const APPMODULELINE: Array<any> = [
     `@NgModule({`,
     `   imports:      [ `,
     `       BrowserModule,`,
-    `       RouterModule.forRoot(appRoutes), `,
+    `       RouterModule.forRoot(appRoutes, {useHash: true}), `,
     `   ],`,
     ``,
     `   declarations: [`,
@@ -49,6 +50,10 @@ const APPCOMPONENTLINE: Array<any> = [
     `   {routerLink: 'menu_1', menuName: 'Menu 1'},`,
     `   {routerLink: 'menu_2', menuName: 'Menu 2'},`,
     `   {routerLink: 'menu_n', menuName: 'Menu N'},`,
+    `   หรือ  `,
+    `   {outerHref: 'outer_url', menuName: 'Anoter Name'},`,
+    `   หรือ  `,
+    `   {outerHref: 'outer_url', menuName: 'Anoter Name', separated: true},`,
     `],`,
     ``,
     `export class AppComponent {`,
@@ -68,11 +73,16 @@ const PAGELIST: Array<any> = [
   {routerLink: 'textarea', menuName: 'Text Area'},
   {routerLink: 'textbox', menuName: 'Text Box'},
   {routerLink: 'texteditor', menuName: 'Text Editor'},
-  {routerLink: 'popup', menuName: 'Popup'},
-  {routerLink: 'progressbar', menuName: 'Progress Bar'},
-  {routerLink: 'pulldown', menuName: 'Pulldown Menu'},
-  {routerLink: 'radiobox', menuName: 'Radio Box'},
-  {routerLink: 'sidebar', menuName: 'Side Bar'},
+  {outerHref: 'http://www.ascii.cl/htmlcodes.htm', menuName: 'Anoter Website'},
+];
+
+const PAGELIST2: Array<any> = [
+  {routerLink: 'badge', menuName: 'Badge'},
+  {routerLink: 'checkbox', menuName: 'Check Box'},
+  {routerLink: 'textarea', menuName: 'Text Area'},
+  {routerLink: 'textbox', menuName: 'Text Box'},
+  {routerLink: 'texteditor', menuName: 'Text Editor'},
+  {outerHref: 'http://www.ascii.cl/htmlcodes.htm', menuName: 'Anoter Website', separated: true},
 ];
 
 @Component({
@@ -84,13 +94,13 @@ const PAGELIST: Array<any> = [
 export class PulldownMenuDocument implements OnInit {
 
   private componentTag: string = '<gos-pulldown-menu>';
-  private componentDescription: string = `Pull down menu คือ เมนูที่แสดงรายการในลักษณะถูกดึงลง โดยการกดที่หัวเมนูหลัก  
+  private componentDescription: string = `Pulldown menu คือ เมนูที่แสดงรายการในลักษณะถูกดึงลง โดยการกดที่หัวเมนูหลัก  
       ตัวเมนูจะ hilight สีเมื่อผู้ใช้อยู่ในหน้าที่ตรงกับ url ของเมนูนั้นๆ 
-      การใช้งานจะใช้ร่วมกับ router link ใน Angular 2 เพื่อความสะดวกในการ config path`;
+      การใช้งานจะใช้ร่วมกับ routerLink ใน Angular 2 เพื่อความสะดวกในการ config path`;
   private version: string = '1.0';
   private releaseDate: string = '19/12/2016';
   private prefixSyntax: string = `<gos-pulldown-menu `;
-  private attrSyntax: string = `headMenu="text" [pageList]="array_variable"`;
+  private attrSyntax: string = `headLabel="text" [pageList]="array_variable"`;
   private suffixSyntax: string = `></gos-pulldown-menu>`;
   private attributeList = ATTRIBUTELIST;
   private systemjsLine = SYSTEMJSLINE;
@@ -98,6 +108,7 @@ export class PulldownMenuDocument implements OnInit {
   private appComponentLine = APPCOMPONENTLINE;
 
   pageList = PAGELIST;
+  pageList2 = PAGELIST2;
   constructor() { }
 
   ngOnInit() {

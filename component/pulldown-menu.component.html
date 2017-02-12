@@ -1,8 +1,11 @@
 <li class="nav-item dropdown">
-  <a class="nav-link dropdown-toggle" href="#" id="supportedContentDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{headMenu}}</a>
+  <a class="nav-link dropdown-toggle" href="#" id="supportedContentDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{headLabel}}</a>
   <div class="dropdown-menu" aria-labelledby="supportedContentDropdown">
     <div *ngFor="let page of pageList">
-      <a class="dropdown-item" routerLinkActive="active" routerLink="/{{page.routerLink}}">{{page.menuName}}</a>
+      <div *ngIf="page.separated" class="dropdown-divider"></div>
+      <a *ngIf="page.routerLink != null" class="dropdown-item" routerLinkActive="active" routerLink="/{{page.routerLink}}">{{page.menuName}}</a>
+      <a *ngIf="page.routerLink == null && page.outerHref != null" class="dropdown-item" href="{{page.outerHref}}" target="_blank">{{page.menuName}}</a>
+      <!--<a *ngIf="page.routerLink == null && page.outerHref == null && page.innerHref != null" class="dropdown-item" routerLinkActive="active" href="/{{page.innerHref}}/">{{page.menuName}}</a>-->
     </div>
   </div>
 </li>

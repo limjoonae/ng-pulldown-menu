@@ -17,11 +17,14 @@ var PageListModel = (function () {
 exports.PageListModel = PageListModel;
 var PulldownMenuComponent = (function () {
     function PulldownMenuComponent() {
+        this.headLabel = '';
     }
+    PulldownMenuComponent.prototype.ngOnInit = function () {
+    };
     __decorate([
         core_1.Input(), 
         __metadata('design:type', String)
-    ], PulldownMenuComponent.prototype, "headMenu", void 0);
+    ], PulldownMenuComponent.prototype, "headLabel", void 0);
     __decorate([
         core_1.Input(), 
         __metadata('design:type', Array)

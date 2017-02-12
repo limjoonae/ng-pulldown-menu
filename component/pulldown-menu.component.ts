@@ -2,7 +2,9 @@ import { Component, OnInit, Input } from '@angular/core';
 
 export class PageListModel {
   routerLink: string;
+  outerHref: string;
   menuName: string;
+  separated: boolean;
 }
 
 @Component({
@@ -11,11 +13,13 @@ export class PageListModel {
   templateUrl: './pulldown-menu.component.html',
   styleUrls: ['./pulldown-menu.component.css']
 })
-export class PulldownMenuComponent {
+export class PulldownMenuComponent implements OnInit {
 
-  @Input() headMenu: string;
+  @Input() headLabel: string = '';
   @Input() pageList: PageListModel[];
 
   constructor() { }
 
+  ngOnInit() {
+  }
 }

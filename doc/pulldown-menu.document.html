@@ -73,8 +73,8 @@
 			<div class="row row-in-tab">
 				<div class="col-md-3">
 					<ul class="nav navbar-nav">
-						<gos-pulldown-menu headMenu="Menu 1" [pageList]="pageList"></gos-pulldown-menu>
-						<gos-pulldown-menu headMenu="Menu 2" [pageList]="pageList"></gos-pulldown-menu>
+						<gos-pulldown-menu headLabel="Menu 1" [pageList]="pageList"></gos-pulldown-menu>
+						<gos-pulldown-menu headLabel="Menu 2" [pageList]="pageList2"></gos-pulldown-menu>
 					</ul>
 				</div>
 				<div class="col-md-9">
@@ -87,12 +87,43 @@
 					</div>
 					<div id="collapse_ex_1" class="collapse" role="tabpanel" aria-labelledby="ex_1">
 						<div class="jumbotron">
-							<div class="row">
-								<code>&lt;ul class="nav navbar-nav"&gt;</code><br>
-								<code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;gos-pulldown-menu headMenu="Menu 1" [pageList]="pageListArray"&gt;&lt;/gos-pulldown-menu&gt;</code><br>
-								<code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;gos-pulldown-menu headMenu="Menu 2" [pageList]="pageListArray"&gt;&lt;/gos-pulldown-menu&gt;</code><br>
-								<code>&lt;/ul&gt;</code>
-							</div>
+							<code>&lt;ul class="nav navbar-nav"&gt;</code><br>
+							<code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;gos-pulldown-menu headLabel="Menu 1" [pageList]="pageList"&gt;&lt;/gos-pulldown-menu&gt;</code><br>
+							<code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;gos-pulldown-menu headLabel="Menu 2" [pageList]="pageList2"&gt;&lt;/gos-pulldown-menu&gt;</code><br>
+							<code>&lt;/ul&gt;</code><br>
+							<p></p><br>
+							<p>component.ts</p>
+<pre>
+<code>import &#123; PageListModel &#125; from 'gos-pulldown-menu';
+
+const PAGELIST: PageListModel&#91;&#93; = &#91; 		//** หรือ PAGELIST: Array&lt;any&gt; */
+  &#123;routerLink: 'badge', menuName: 'Badge'&#125;,
+  &#123;routerLink: 'checkbox', menuName: 'Check Box'&#125;,
+  &#123;routerLink: 'textarea', menuName: 'Text Area'&#125;,
+  &#123;routerLink: 'textbox', menuName: 'Text Box'&#125;,
+  &#123;routerLink: 'texteditor', menuName: 'Text Editor'&#125;
+  &#123;outerHref: 'http://www.ascii.cl/htmlcodes.htm', menuName: 'Text Editor'&#125;
+&#93;;
+
+const PAGELIST2: PageListModel&#91;&#93; = &#91; 		
+  &#123;routerLink: 'badge', menuName: 'Badge'&#125;,
+  &#123;routerLink: 'checkbox', menuName: 'Check Box'&#125;,
+  &#123;routerLink: 'textarea', menuName: 'Text Area'&#125;,
+  &#123;routerLink: 'textbox', menuName: 'Text Box'&#125;,
+  &#123;routerLink: 'texteditor', menuName: 'Text Editor'&#125;
+  &#123;outerHref: 'http://www.ascii.cl/htmlcodes.htm', menuName: 'Anoter Website', separated: true&#125;
+&#93;;
+
+@Component(&#123;
+  selector: 'my-app',
+  template: `&lt;router-outlet&gt;&lt;/router-outlet&gt;`,
+&#125;)
+
+export class AppComponent  &#123; 
+  pageList = PAGELIST;
+  pageList2 = PAGELIST2;
+&#125;</code>
+</pre><br>
 						</div>
 					</div>
 				</div>
