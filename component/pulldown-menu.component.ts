@@ -9,7 +9,7 @@ export class PageListModel {
 
 @Component({
   moduleId: module.id,
-  selector: 'gos-pulldown-menu',
+  selector: 'go-pulldown-menu',
   templateUrl: './pulldown-menu.component.html',
   styleUrls: ['./pulldown-menu.component.css']
 })

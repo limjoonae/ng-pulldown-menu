@@ -8,18 +8,18 @@ const ATTRIBUTELIST: Array<any> = [
 
 const SYSTEMJSLINE: Array<any> = [
     `map: {`,
-    ` 'gos-pulldown-menu': 'gos:pulldown-menu/{version}',`,
+    ` 'go-pulldown-menu': 'go:pulldown-menu/{version}',`,
     `},`,
     ``,
     `packages: {`,
-    ` 'gos-pulldown-menu': {`,
+    ` 'go-pulldown-menu': {`,
     `    main: './pulldown-menu.js',`,
     `    defaultExtension: 'js'`,
     `  },`,    
 ];
 
 const APPMODULELINE: Array<any> = [
-    `import { PulldownMenuComponent } from 'gos-pulldown-menu';`,
+    `import { PulldownMenuComponent } from 'go-pulldown-menu';`,
     `import { RouterModule, Routes } from '@angular/router';`,
     ``,
     `const appRoutes: Routes = [`,
@@ -44,7 +44,7 @@ const APPMODULELINE: Array<any> = [
 ];
 
 const APPCOMPONENTLINE: Array<any> = [
-    `import { PageListModel } from 'gos-pulldown-menu';`,
+    `import { PageListModel } from 'go-pulldown-menu';`,
     ``,
     `const CONST_VAR_NAME: PageListModel[] = [`,
     `   {routerLink: 'menu_1', menuName: 'Menu 1'},`,
@@ -93,15 +93,15 @@ const PAGELIST2: Array<any> = [
 })
 export class PulldownMenuDocument implements OnInit {
 
-  private componentTag: string = '<gos-pulldown-menu>';
+  private componentTag: string = '<go-pulldown-menu>';
   private componentDescription: string = `Pulldown menu คือ เมนูที่แสดงรายการในลักษณะถูกดึงลง โดยการกดที่หัวเมนูหลัก  
       ตัวเมนูจะ hilight สีเมื่อผู้ใช้อยู่ในหน้าที่ตรงกับ url ของเมนูนั้นๆ 
       การใช้งานจะใช้ร่วมกับ routerLink ใน Angular 2 เพื่อความสะดวกในการ config path`;
   private version: string = '1.0';
   private releaseDate: string = '19/12/2016';
-  private prefixSyntax: string = `<gos-pulldown-menu `;
+  private prefixSyntax: string = `<go-pulldown-menu `;
   private attrSyntax: string = `headLabel="text" [pageList]="array_variable"`;
-  private suffixSyntax: string = `></gos-pulldown-menu>`;
+  private suffixSyntax: string = `></go-pulldown-menu>`;
   private attributeList = ATTRIBUTELIST;
   private systemjsLine = SYSTEMJSLINE;
   private appModuleLine = APPMODULELINE;
